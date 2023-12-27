@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boards</title>
+    <link rel="stylesheet" href="css/boards.css" />
+  </head>
+  <body>
+    <div class="header">
+      <div>
+        <a href="javascript:void(0);" id="appName">TROLLO</a>
+        <a href="javascript:void(0);" id="boardsMenu">Boards</a>
+        <a href="javascript:void(0);" id="allCardsMenu">All Cards</a>
+      </div>
+      <button class="new-board-btn" id="newBoardBtn">
+        <span class="icon-plus">+</span> New board
+      </button>
+    </div>
+
+    <div class="board-container" id="boardContainer">
+      <!-- Board squares will be added here dynamically -->
+    </div>
+
+    <div id="createBoardModal" class="modal" style="display: none">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Create New Board</h2>
+        <form id="createBoardForm">
+          <div class="form-group">
+            <label for="boardName">Board Name:</label>
+            <input type="text" id="boardName" name="boardName" required />
+          </div>
+
+          <div class="form-group">
+            <label>Color:</label>
+            <div id="colorOptions">
+              <!-- Multiple color options -->
+              <div
+                class="color-option"
+                onclick="selectColor('pink')"
+                style="background-color: pink"
+              ></div>
+              <div
+                class="color-option"
+                onclick="selectColor('green')"
+                style="background-color: green"
+              ></div>
+              <div
+                class="color-option"
+                onclick="selectColor('red')"
+                style="background-color: red"
+              ></div>
+              <div
+                class="color-option"
+                onclick="selectColor('orange')"
+                style="background-color: orange"
+              ></div>
+              <div
+                class="color-option"
+                onclick="selectColor('brown')"
+                style="background-color: brown"
+              ></div>
+              <div
+                class="color-option"
+                onclick="selectColor('lightblue')"
+                style="background-color: lightblue"
+              ></div>
+              <div
+                class="color-option"
+                onclick="selectColor('darkblue')"
+                style="background-color: darkblue"
+              ></div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Label Values:</label>
+            <div id="listInputs">
+              <!-- List input fields will be added here dynamically -->
+            </div>
+            <button type="button" id="addListButton" onclick="addListInput()">
+              Add List to Board
+            </button>
+          </div>
+
+          <button type="submit" id="createBoardButton">Create</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="js/boards.js"></script>
+  </body>
+</html>

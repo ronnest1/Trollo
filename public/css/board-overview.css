@@ -1,0 +1,258 @@
+body {
+  margin: 0;
+  padding: 20px; /* Added padding around the body to create space */
+  font-family: "Arial", sans-serif;
+  background-color: #f4f7f6;
+}
+.header {
+  display: flex;
+  justify-content: space-between; /* Aligns children to the space between */
+  margin-bottom: 20px; /* Space below the header */
+  height: 70px; /* Increased header height */
+  font-weight: bold; /* Bolder text */
+}
+.search-section {
+  width: 75%; /* Takes up 75% of the header width */
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  border-radius: 4px; /* Rounded corners */
+  position: relative; /* For absolute positioning of the close icon */
+}
+.search-input {
+  width: 100%; /* Full width of its parent */
+  border: none;
+  margin-bottom: 10px; /* Space below the search input */
+  padding: 5px 10px;
+  font-size: 14px;
+}
+.category-box {
+  display: inline-block; /* Allows boxes to sit side by side */
+  background-color: #ff9f1a; /* Starting with the first color, orange */
+  padding: 5px 10px;
+  border-radius: 4px;
+  margin-right: 5px; /* Space between the boxes */
+  font-size: 14px;
+}
+/* Additional color classes for category boxes */
+.category-box.assignee {
+  background-color: #ffd700;
+} /* Yellow */
+.category-box.importance {
+  background-color: #007bff;
+} /* Blue */
+
+.close-icon {
+  position: absolute; /* Positioning relative to its parent */
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.new-list-input {
+  width: 23%; /* Adjusted to 23% to compensate for padding */
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 5px;
+  border-radius: 4px;
+  border: 2px solid #ff9f1a; /* Thick orange border */
+  position: relative; /* For the icon positioning */
+  display: flex; /* To align the input and the icon */
+  align-items: center; /* Centers children vertically */
+}
+.new-list-input input {
+  width: 100%;
+  border: none;
+  padding: 5px 10px;
+  font-size: 14px;
+}
+.add-icon {
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+body,
+h1,
+div,
+button {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f4f7f6;
+  margin: 0;
+  padding: 20px; /* Added padding for overall spacing */
+  overflow: auto; /* Allow scrolling if the content exceeds the viewport height */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed; /* Header is fixed at the top of the viewport */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10; /* Ensure the header is above other content */
+}
+
+/* Main board styles */
+.board {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start; /* Align to the top of the container */
+  gap: 10px; /* Space between lists */
+  margin-top: 80px; /* Space below the fixed header */
+  height: calc(
+    100vh - 80px
+  ); /* Adjust height to fill the space below the header */
+}
+.list,
+.list-unassigned,
+.list-assigned {
+  border: 2px solid #a52a2a; /* Example border style */
+  background-color: #ffffff; /* White background */
+  height: 100%; /* Full remaining height */
+  width: 300px; /* Width of the list */
+  margin-bottom: 20px; /* Space below the list */
+  overflow-y: auto; /* Scroll for overflow content */
+}
+
+.list-header,
+.list-header-unassigned,
+.list-header-assigned {
+  background-color: #d3d3d3; /* Example header background color */
+  color: #a52a2a; /* Text color */
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Styles for the unassigned list */
+.list-unassigned {
+  border: 2px dashed #a52a2a; /* Brown dashed border */
+  background-color: #ffffff; /* White background */
+  height: 100%; /* Full remaining height */
+  width: 300px; /* Width of the list */
+  margin-bottom: 20px; /* Space below the list */
+  overflow-y: auto; /* Scroll for overflow content */
+}
+
+.list-header-unassigned {
+  background-color: #a52a2a; /* Brown background for the header */
+  color: #ffffff; /* White text */
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Styles for the assigned list */
+.list-assigned {
+  border: 2px solid #a52a2a; /* Brown solid border */
+  background-color: #ffffff; /* White background */
+  height: 100%; /* Full remaining height */
+  width: 300px; /* Width of the list */
+  margin-bottom: 20px; /* Space below the list */
+  overflow-y: auto; /* Scroll for overflow content */
+}
+
+.list-header-assigned {
+  background-color: #d3d3d3; /* Light grey background for the header */
+  color: #a52a2a; /* Brown text */
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Styles for the number box in the list headers */
+.number-box,
+.number-box-assigned {
+  border-radius: 4px; /* Rounded corners */
+  padding: 5px 10px;
+}
+
+.number-box {
+  background-color: #ffffff; /* White background */
+  color: #a52a2a; /* Brown text */
+}
+
+.number-box-assigned {
+  background-color: #a52a2a; /* Brown background */
+  color: #ffffff; /* White text */
+}
+
+/* Styles for individual cards in the lists */
+.card {
+  background-color: #fff; /* White background */
+  border: 1px solid #ddd; /* Light grey border */
+  padding: 10px;
+  margin-bottom: 10px; /* Space between cards */
+  border-radius: 4px; /* Rounded corners */
+}
+
+/* Subtext styles (e.g., 'Severity' under the values) */
+.subtext {
+  font-size: 12px; /* Smaller font size for the subtext */
+  color: #a52a2a; /* Adjusting the color to match the list border */
+  padding-left: 5px; /* Padding to align with the list title */
+}
+/* Modal styling */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* Close button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.list-header-unassigned,
+.list-header-assigned {
+  display: flex;
+  justify-content: space-between; /* Aligns items to both ends */
+  align-items: center; /* Centers items vertically */
+}
+
+.header-text-container {
+  flex-grow: 1; /* Allows this container to take up available space */
+}
+
+.header-text-container > div {
+  margin-bottom: 5px; /* Spacing between the main text and subtext */
+}

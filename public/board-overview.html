@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Board Overview</title>
+    <link rel="stylesheet" href="css/board-overview.css" />
+  </head>
+  <body>
+    <div class="header">
+      <div class="board-selection">
+        <select id="boardSelect">
+          <option value="">Select a Board</option>
+          <!-- Boards will be loaded here -->
+        </select>
+        <button onclick="loadBoard()">Load Board</button>
+      </div>
+      <div class="search-section">
+        <input type="text" class="search-input" placeholder="search..." />
+        <div class="category-box">Risk</div>
+        <div class="category-box assignee">Assignee</div>
+        <div class="category-box importance">Importance</div>
+        <div class="close-icon">X</div>
+      </div>
+      <div class="new-list-input">
+        <input type="text" placeholder="new list name goes here..." />
+        <div class="add-icon">+</div>
+      </div>
+    </div>
+    <div class="board">
+      <!-- Unassigned list -->
+      <div class="list-unassigned">
+        <div
+          class="list-header-unassigned"
+          onclick="handleAddCardClick('.list-content-unassigned')"
+        >
+          Severity <span class="number-box">6</span>
+        </div>
+        <div class="list-content list-content-unassigned">
+          <!-- Cards will be dynamically inserted here -->
+        </div>
+      </div>
+
+      <!-- Assigned list for 'Critical' severity -->
+      <div class="list-assigned">
+        <div
+          class="list-header-assigned"
+          onclick="handleAddCardClick('.list-content-Critical')"
+        >
+          Critical
+          <!-- Subtext under the 'Critical' value -->
+          <span class="subtext">Severity</span>
+          <span class="number-box-assigned">2</span>
+        </div>
+        <div class="list-content list-content-Critical">
+          <!-- Cards will be dynamically inserted here -->
+        </div>
+      </div>
+
+      <!-- Additional assigned lists for 'Bad' and 'Acceptable' severities would be similar to the 'Critical' list above -->
+    </div>
+    <div id="editModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <textarea id="cardEditText"></textarea>
+        <button id="saveEdit">Save</button>
+        <button id="deleteCard">Delete</button>
+      </div>
+    </div>
+     <script src="js/board-overview.js"></script>
+    
+  </body>
+</html>

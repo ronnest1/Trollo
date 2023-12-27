@@ -1,0 +1,167 @@
+body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f7f6;
+      }
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #ffffff;
+        padding: 10px 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
+      }
+      .header a {
+        text-decoration: none;
+        color: #007bff;
+        font-weight: bold;
+        margin-right: 20px;
+      }
+      .header a:not(:first-child) {
+        color: #000;
+      }
+      .board-container {
+        padding-top: 60px; /* Height of the header */
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 20px;
+      }
+      .board-square {
+        flex: 0 1 calc(20% - 10px); /* 5 per row, minus gap */
+        height: 100px;
+        background-color: #ff9f1a; /* Placeholder color */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        cursor: pointer;
+      }
+      .new-board-btn {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+        color: #007bff;
+        font-size: 16px;
+        margin-left: auto;
+      }
+      .new-board-btn:hover {
+        text-decoration: underline;
+      }
+      .new-board-btn i {
+        margin-right: 5px;
+      }
+      .icon-plus {
+        font-style: normal;
+        font-weight: bold;
+      }
+      .modal {
+        display: none; /* Hidden by default */
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+
+      .modal-content {
+        background-color: #fefefe;
+        margin: 10% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 50%;
+        position: relative;
+      }
+
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .form-group {
+        margin-bottom: 15px; /* Adjust as needed for spacing */
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 5px; /* Spacing between label and input */
+      }
+
+      .color-option {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        margin-right: 5px;
+        border: 2px solid white; /* for visibility */
+      }
+
+      /* Newly added styles for list inputs */
+      .list-input-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+      }
+
+      .list-input {
+        flex-grow: 1;
+        margin-right: 5px;
+      }
+
+      .delete-list-btn {
+        cursor: pointer;
+        background-color: red;
+        color: white;
+        border: none;
+        padding: 5px;
+      }
+
+      .color-option.selected {
+        border-color: black; /* Indicate selected color */
+      }
+
+      #addListButton {
+        background-color: #ffffff; /* Or any other color that fits the design */
+        color: #007bff;
+        border: 1px solid #007bff;
+        padding: 8px 16px;
+        margin-top: 10px; /* To separate it from input fields */
+        cursor: pointer;
+      }
+
+      #createBoardButton {
+        background-color: #007bff;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        font-weight: bold;
+        margin-top: 20px; /* More space from the last input field */
+        cursor: pointer;
+        float: right; /* Align to the right */
+      }
+
+      /* Clear floats */
+      .modal-content::after {
+        content: "";
+        display: table;
+        clear: both;
+      }
